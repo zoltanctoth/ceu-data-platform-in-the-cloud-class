@@ -73,13 +73,13 @@ Sys.setenv("AWS_ACCESS_KEY_ID" = AWS_ACCESS_KEY_ID,
            "AWS_SECRET_ACCESS_KEY" = AWS_SECRET_ACCESS_KEY,
            "AWS_DEFAULT_REGION" = "eu-west-1") 
 
-BUCKET_PREFIX="zoltan-sandbox" # Change this to your own
+BUCKET="zoltan-sandbox" # Change this to your own
 
 put_object(file = raw.output.fullpath,
            object = paste('de4/raw/', 
                                   raw.output.filename,
                                   sep = ""),
-           bucket = BUCKET_PREFIX,
+           bucket = BUCKET,
            verbose = TRUE)
 
 
