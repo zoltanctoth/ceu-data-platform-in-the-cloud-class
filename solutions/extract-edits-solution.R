@@ -68,7 +68,6 @@ write(wiki.response.body, raw.output.fullpath)
 keyTable <- read.csv("accessKeys.csv", header = T) # accessKeys.csv == the CSV downloaded from AWS containing your Acces & Secret keys
 AWS_ACCESS_KEY_ID <- as.character(keyTable$Access.key.ID)
 AWS_SECRET_ACCESS_KEY <- as.character(keyTable$Secret.access.key)
-BUCKET="zoltan-sandbox"
 
 Sys.setenv("AWS_ACCESS_KEY_ID" = AWS_ACCESS_KEY_ID,
            "AWS_SECRET_ACCESS_KEY" = AWS_SECRET_ACCESS_KEY,
@@ -80,7 +79,7 @@ put_object(file = raw.output.fullpath,
            object = paste('de4/raw/', 
                                   raw.output.filename,
                                   sep = ""),
-           bucket = BUCKET_PREFIX,
+           bucket = BUCKET,
            verbose = TRUE)
 
 
